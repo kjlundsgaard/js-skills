@@ -370,6 +370,15 @@
 
 <script>
   // put your code here
+
+  function agree(evt) {
+    var input = $("#favorite-food-input").val();
+    $("#agreeable-text").html("I like " + input + ", too!");
+    evt.preventDefault();
+  }
+
+  $("#agreeable-form").submit(agree);
+
 </script>
 
 <div class="hint">
