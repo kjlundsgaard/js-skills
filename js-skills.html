@@ -465,6 +465,30 @@
 
 <script>
   // put your code here
+  // NEED TO FIGURE OUT A WAY TO ENABLE TEXT INPUT AND GUESS BUTTON
+
+  function generateRandom(evt) {
+    var number = Math.floor(Math.random() * 100);
+    $("#play-guessing-game-2").attr("disabled", "disabled");
+    $("#number-guessed").attr("disabled", False);
+  }
+
+  function playGame(evt) {
+    while (guess !== number) {
+      var guess = $("#number-guessed").val();
+      if (guess < number) {
+        $("#number-guessing-msg").html("too low!");
+      }
+      else if (guess > number) {
+        $("#number-guessing-msg").html("too low!");
+      }
+    }
+    $("#number-guessing-msg").html("Congrats! You guessed: " + number);
+    evt.preventDefault();
+  }
+
+  $("#play-guessing-game-2").click(generateRandom);
+  $("#try-this-number").click(playGame);
 </script>
 
 
